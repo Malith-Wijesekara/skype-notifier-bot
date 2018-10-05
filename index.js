@@ -1,6 +1,14 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
+// var connectedRef = firebase.database().ref(".info/connected");
+// connectedRef.on("value", function(snap) {
+//   if (snap.val() === true) {
+//     alert("connected");
+//   } else {
+//     alert("not connected");
+//   }
+// });
 const path = require('path');
 const restify = require('restify');
 
@@ -105,3 +113,9 @@ server.post('/api/messages', (req, res) => {
     });
 });
 
+
+var angularDb = require('./AngularDB.js');
+
+var call = new angularDb();
+//call.initDB();
+console.log(call.initDB());
